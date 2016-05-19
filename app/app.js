@@ -1,3 +1,6 @@
 "use strict";
 
-console.log("Hello", Hello);
+console.log("Hello");
+
+
+/* use dollar scope notation */
