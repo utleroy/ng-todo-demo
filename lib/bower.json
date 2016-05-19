@@ -1,0 +1,17 @@
+{
+  "name": "ng-todo-demo",
+  "homepage": "https://github.com/utleroy/ng-todo-demo",
+  "authors": [
+    "utleroy <bryanhankins@me.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
