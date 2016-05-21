@@ -8,7 +8,6 @@ app.controller("TodoCtrl", function($scope) {
 	$scope.welcome = "hello";
 	$scope.showListView = true;
 	$scope.newTask = {};
-
 	$scope.items = [
 	 {
 	   id: 0,
@@ -18,7 +17,7 @@ app.controller("TodoCtrl", function($scope) {
 	   assignedTo: "Lee",
 	   location: "my house",
 	   urgency: "low",
-	   dependencies: ["sunshine", "clippers", "hat"]
+	   dependencies: "sunshine, clippers, hat"
 	 },
 	 {
 	   id: 1,
@@ -28,7 +27,7 @@ app.controller("TodoCtrl", function($scope) {
 	   assignedTo: "Lee",
 	   location: "school",
 	   urgency: "high",
-	   dependencies: ["computer", "books", "help"]
+	   dependencies: "sunshine, clippers, hat"
 	 },
 	 {
 	   id: 2,
@@ -38,9 +37,9 @@ app.controller("TodoCtrl", function($scope) {
 	   assignedTo: "Lee",
 	   location: "my house",
 	   urgency: "low",
-	   dependencies: ["sunshine", "clippers", "hat"]
+	   dependencies: "sunshine, clippers, hat"
 	 }
-	]
+	];
 
 	$scope.newItem = function() {
 		console.log("clicked new item");
@@ -51,6 +50,14 @@ app.controller("TodoCtrl", function($scope) {
 		console.log("clicked all items");
 		$scope.showListView = true;
 
+	};
+
+	$scope.addNewItem = function() {
+		$scope.newTask.isCompleted = false;
+		$scope.newTask.id = $scope.items.length;
+		console.log("added new item", $scope.newTask);
+		$scope.items.push($scope.newTask);
+		$scope.newTask = "";
 	};
 });
 
