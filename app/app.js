@@ -14,17 +14,17 @@ app.controller("TodoCtrl", function($scope) {
 	   task: "mow the lawn",
 	   isCompleted: true,
 	   dueDate: "12/5/16",
-	   assignedTo: "Lee",
+	   assignedTo: "Tom",
 	   location: "my house",
 	   urgency: "low",
 	   dependencies: "sunshine, clippers, hat"
 	 },
 	 {
 	   id: 1,
-	   task: "write some code",
+	   task: "write some code lee",
 	   isCompleted: true,
 	   dueDate: "11/5/16",
-	   assignedTo: "Lee",
+	   assignedTo: "Dick",
 	   location: "school",
 	   urgency: "high",
 	   dependencies: "sunshine, clippers, hat"
@@ -34,7 +34,7 @@ app.controller("TodoCtrl", function($scope) {
 	   task: "mow the lawn",
 	   isCompleted: true,
 	   dueDate: "12/5/16",
-	   assignedTo: "Lee",
+	   assignedTo: "Harry",
 	   location: "my house",
 	   urgency: "low",
 	   dependencies: "sunshine, clippers, hat"
