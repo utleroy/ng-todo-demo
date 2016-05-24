@@ -16,7 +16,7 @@ app.config(function($routeProvider) {
 		}).
 		otherwise("items/list");
 
-})
+});
 
 
 
