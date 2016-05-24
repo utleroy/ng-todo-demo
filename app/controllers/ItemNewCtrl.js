@@ -11,7 +11,7 @@ app.controller("ItemNewCtrl", function($scope, $http, $location) {
 
 	$scope.addNewItem = function() {
 		$http.post(
-			"https://leroy-todo.firebaseio.com/",
+			"https://leroy-todo.firebaseio.com/items.json",
 			JSON.stringify({
 				assignedTo: $scope.newTask.assignedTo,
 				dependencies: $scope.newTask.dependencies,
