@@ -17,6 +17,6 @@ app.controller("ItemViewCtrl", function($scope, $http, $routeParams) {
 				  	return item.id === $routeParams.itemId;
 				  })[0];
 
-			  })
+			  });
 		});
 });

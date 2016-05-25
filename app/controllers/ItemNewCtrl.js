@@ -24,8 +24,8 @@ app.controller("ItemNewCtrl", function($scope, $http, $location) {
 		    )
 			.success(function(response) {
 				console.log(response);
-				$location.url("/items/list")
-			})
+				$location.url("/items/list");
+			});
 		
 		
 		
