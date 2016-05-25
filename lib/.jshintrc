@@ -1,10 +1,10 @@
 {
-        "predef": [ "document", "jQuery", "$", "console" ],
-        "esversion": 6,
-        "globalstrict": true,
-        "globals": {
-        	"$": true,
-        	"node": true;
-        	"app": true
-        }
+	"predef": [ "document", "jQuery", "$", "console" ],
+	"esversion": 6,
+	"globalstrict": true,
+	"globals": {
+	"$": true,
+	"node": true,
+	"app": true
+	}
 }
