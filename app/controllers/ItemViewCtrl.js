@@ -1,10 +1,10 @@
-app.controller("ItemViewCtrl", function($scope, $http, $routeParams) {
+app.controller("ItemViewCtrl", function($scope, $http, $routeParams, itemStorage) {
 	// $scope.welcome = "hello"; angular console log example
 	$scope.items = [];
 	$scope.selectedItem = {};
-	console.log($routeParams.itemId);
 
-	$http.get("https://leroy-todo.firebaseio.com/items.json")
+
+	$http.get(firebaseURL + "/items.json")
 		.success(function(itemObject) {
 			var itemCollection = itemObject;
 			Object.keys(itemCollection).forEach(function(key) {

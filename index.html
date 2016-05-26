@@ -8,7 +8,7 @@
 	<title>ng-todo-demo</title>
 </head>
 <body ng-app="TodoApp">
-	<dir ng-include="'partials/nav-bar.html'"></dir>
+	<div ng-include="'partials/nav-bar.html'"></div>
 	<div>
 		<div class="row">
 			<div class="col-xs-10 col-xs-offset-1 class main-container">
@@ -23,11 +23,14 @@
 	<script src="lib/bower_components/angular-route/angular-route.min.js"></script>
 	<script src="app/app.js"></script>
 
-	<script src="app/factories/itemFactory.js"></script>	
+	<script src="app/factories/itemFactory.js"></script>
+		
 	<script src="app/controllers/NavCtrl.js"></script>
 	<script src="app/controllers/ItemListCtrl.js"></script>
 	<script src="app/controllers/ItemViewCtrl.js"></script>
 	<script src="app/controllers/ItemNewCtrl.js"></script>
+	<script src="app/controllers/ItemEditCtrl.js"></script>
+
   
 </body>
 </html>

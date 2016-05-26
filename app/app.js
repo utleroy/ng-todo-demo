@@ -15,6 +15,10 @@ app.config(function($routeProvider) {
 			templateUrl: "partials/item-details.html",
 			controller: "ItemViewCtrl"
 		}).
+		when("/items/:itemId/edit", {                        //colon tells angular to pull out itemId
+			templateUrl: "partials/item-new.html",
+			controller: "ItemEditCtrl"
+		}).
 		otherwise("items/list");
 
 });

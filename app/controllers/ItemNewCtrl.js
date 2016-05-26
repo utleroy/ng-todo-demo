@@ -1,4 +1,6 @@
-app.controller("ItemNewCtrl", function($scope, $http, $location) {
+app.controller("ItemNewCtrl", function($scope, $http, itemStorage) {
+	$scope.title = "New Item";
+	$scope.submitButtonText = "Add New Item";
 	$scope.newTask = {
 		assignedTo: "",
 		dependencies: "",
@@ -10,18 +12,7 @@ app.controller("ItemNewCtrl", function($scope, $http, $location) {
 	};
 
 	$scope.addNewItem = function() {
-		$http.post(
-			"https://leroy-todo.firebaseio.com/items.json",
-			JSON.stringify({
-				assignedTo: $scope.newTask.assignedTo,
-				dependencies: $scope.newTask.dependencies,
-				dueDate: $scope.newTask.dueDate,
-				isCompleted: $scope.newTask.isCompleted,
-				location: $scope.newTask.location,
-				task: $scope.newTask.task,
-				urgency: $scope.newTask.urgency
-			  })
-		    )
+		itemStorage.postNewItem($scope.newTask)
 			.success(function(response) {
 				console.log(response);
 				$location.url("/items/list");
