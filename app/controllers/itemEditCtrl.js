@@ -7,12 +7,12 @@ app.controller("ItemEditCtrl", function($scope, $location, $routeParams, itemSto
 		.then(function successCallback(response) {
 			$scope.newTask=response;
 
-		})
+		});
 
 	$scope.addNewItem = function() {
-		itemStorage.postNewItem($routeParams.itemId, $scope.newTask)
+		itemStorage.updateItem($routeParams.itemId, $scope.newTask)
 			.then(function successCallback(response) {
-				console.log(response);
+				console.log("response", response);
 				$location.url("/items/list");
 			});	
 		

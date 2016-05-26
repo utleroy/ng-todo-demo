@@ -60,7 +60,7 @@ app.factory("itemStorage", function($q, $http, firebaseURL){
 					reject(error);
 				});
 		});
-	}
+	};
 
 	var updateItem = function(itemId, newItem){
         return $q(function(resolve, reject) {
@@ -85,6 +85,7 @@ app.factory("itemStorage", function($q, $http, firebaseURL){
 	};
 
 		var updateCompletedStatus = function(newItem){
+            console.log("new item", newItem);
         return $q(function(resolve, reject) {
             $http.put(
                 firebaseURL + "items/" + newItem.id + ".json",

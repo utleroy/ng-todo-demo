@@ -2,7 +2,7 @@ app.controller("ItemListCtrl", function($scope, $location, itemStorage){
     $scope.items = [];
 
     itemStorage.getItemList().then(function(itemCollection){
-        console.log("itemCollection from promise", itemCollection);
+        console.log("coming form promise", itemCollection);
         $scope.items = itemCollection;
     });
 
@@ -19,8 +19,8 @@ app.controller("ItemListCtrl", function($scope, $location, itemStorage){
         itemStorage.updateCompletedStatus(item)
             .then(function(response){
                 console.log(response);
-            })
-    }
+            });
+    };
 
 
 

@@ -1,4 +1,4 @@
-app.controller("ItemViewCtrl", function($scope, $http, $routeParams, itemStorage) {
+app.controller("ItemViewCtrl", function($scope, $http, $routeParams, firebaseURL, itemStorage) {
 	// $scope.welcome = "hello"; angular console log example
 	$scope.items = [];
 	$scope.selectedItem = {};
