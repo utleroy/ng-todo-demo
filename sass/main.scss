@@ -1,0 +1,23 @@
+$dkTheme: darkgray;
+$red: red;
+$blue: blue;
+$black: black;
+$heading: lightgrey;
+
+body {
+	background-color: $dkTheme;
+}
+
+.main-container {
+	color: $black;
+}
+
+.search-bar-spacing {
+	padding-bottom: 10px;
+}
+
+.heading-row {
+	background-color: $heading;
+}
+
+
