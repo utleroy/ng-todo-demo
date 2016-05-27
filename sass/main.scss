@@ -1,16 +1,21 @@
 $lobster: bisque;
 $red: red;
 $blue: blue;
+$black: black;
+$heading: lightgrey;
 
 body {
-	background-color: bisque;
+	background-color: $lobster;
 }
 
 .main-container {
-	border: 2px dashed $red;
-	color: $blue;
+	color: $black;
 }
 
 .search-bar-spacing {
 	padding-bottom: 20px;
+}
+
+.heading-row {
+	background-color: $heading;
 }

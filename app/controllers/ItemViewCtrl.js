@@ -5,11 +5,11 @@ app.controller("ItemViewCtrl", function($scope, $http, $routeParams, firebaseURL
 
 
 	$http.get(firebaseURL + "/items.json")
-		.success(function(itemObject) {
-			var itemCollection = itemObject;
-			Object.keys(itemCollection).forEach(function(key) {
-				  itemCollection[key].id = key;
-				  $scope.items.push(itemCollection[key]);
+	.success(function(itemObject) {
+		var itemCollection = itemObject;
+		Object.keys(itemCollection).forEach(function(key) {
+			itemCollection[key].id = key;
+			$scope.items.push(itemCollection[key]);
 
 				  // the filter method below loops through the firebase array and shows everything associated with itemId
 
@@ -17,6 +17,6 @@ app.controller("ItemViewCtrl", function($scope, $http, $routeParams, firebaseURL
 				  	return item.id === $routeParams.itemId;
 				  })[0];
 
-			  });
-		});
+				});
+	});
 });
