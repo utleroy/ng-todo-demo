@@ -4,14 +4,18 @@ app.factory("itemStorage", function($q, $http, firebaseURL, AuthFactory){
 	
 	var getItemList = function(){
 		var items = [];
+    let user = AuthFactory.getUser();
+    console.log("user", user);
 		return $q(function(resolve, reject){
-			$http.get(firebaseURL + "items.json")
+			$http.get(`${firebaseURL}items.json?orderBy="uid"&equalTo="${user.uid}"`)
       .success(function(itemObject){
        var itemCollection = itemObject;
+       console.log("itemCollection", itemObject);
        Object.keys(itemCollection).forEach(function(key){
         itemCollection[key].id=key;
         items.push(itemCollection[key]);
       });
+       console.log("items", items);
        resolve(items);
      })
       .error(function(error){
@@ -67,6 +71,7 @@ app.factory("itemStorage", function($q, $http, firebaseURL, AuthFactory){
   };
 
   var updateItem = function(itemId, newItem){
+    let user = AuthFactory.getUser();
     return $q(function(resolve, reject) {
       $http.put(
         firebaseURL + "items/" + itemId + ".json",
@@ -77,7 +82,8 @@ app.factory("itemStorage", function($q, $http, firebaseURL, AuthFactory){
           isCompleted: newItem.isCompleted,
           location: newItem.location,
           task: newItem.task,
-          urgency: newItem.urgency
+          urgency: newItem.urgency,
+          uid: user.uid
         })
         )
       .success(

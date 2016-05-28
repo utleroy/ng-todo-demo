@@ -4,6 +4,7 @@ app.controller("ItemListCtrl", function($scope, $location, itemStorage){
   itemStorage.getItemList().then(function(itemCollection){
     console.log("coming form promise", itemCollection);
     $scope.items = itemCollection;
+    console.log("$scope.items", $scope.items);
   });
 
   $scope.itemDelete = function(itemId){

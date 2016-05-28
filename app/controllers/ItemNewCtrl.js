@@ -5,7 +5,7 @@ app.controller("ItemNewCtrl", function($scope, $location, itemStorage) {
 		assignedTo: "",
 		dependencies: "",
 		dueDate: "",
-		isCompleted: "false",
+		isCompleted: false,
 		location: "",
 		task: "",
 		urgency: "",
@@ -14,10 +14,10 @@ app.controller("ItemNewCtrl", function($scope, $location, itemStorage) {
 
 	$scope.addNewItem = function() {
 		itemStorage.postNewItem($scope.newTask)
-			.then(function someName (response) {
-				console.log(response);
-				$location.url("/items/list");
-			});
+		.then(function someName (response) {
+			console.log(response);
+			$location.url("/items/list");
+		});
 		
 		
 		
