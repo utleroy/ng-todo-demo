@@ -19,6 +19,10 @@ app.config(function($routeProvider) {
 			templateUrl: "partials/item-new.html",
 			controller: "ItemEditCtrl"
 		}).
+		when("/login", {
+			templateUrl: "partials/login.html",
+			controller: "loginCtrl"
+		}).
 		otherwise("items/list");
 
 });
