@@ -1,4 +1,6 @@
-app.factory("itemStorage", function($q, $http, firebaseURL){
+"use strict";
+
+app.factory("itemStorage", function($q, $http, firebaseURL, AuthFactory){
 	
 	var getItemList = function(){
 		var items = [];
@@ -29,6 +31,7 @@ app.factory("itemStorage", function($q, $http, firebaseURL){
 	};
 
 	var postNewItem = function(newItem){
+    let user = AuthFactory.getUser();
     return $q(function(resolve, reject) {
       $http.post(
         firebaseURL + "items.json",
@@ -39,7 +42,8 @@ app.factory("itemStorage", function($q, $http, firebaseURL){
           isCompleted: newItem.isCompleted,
           location: newItem.location,
           task: newItem.task,
-          urgency: newItem.urgency
+          urgency: newItem.urgency,
+          uid: user.uid
         })
         )
       .success(

@@ -1,4 +1,4 @@
-app.controller("ItemNewCtrl", function($scope, $http, itemStorage) {
+app.controller("ItemNewCtrl", function($scope, $location, itemStorage) {
 	$scope.title = "New Item";
 	$scope.submitButtonText = "Add New Item";
 	$scope.newTask = {
@@ -8,12 +8,13 @@ app.controller("ItemNewCtrl", function($scope, $http, itemStorage) {
 		isCompleted: "false",
 		location: "",
 		task: "",
-		urgency: ""
+		urgency: "",
+		uid: ""
 	};
 
 	$scope.addNewItem = function() {
 		itemStorage.postNewItem($scope.newTask)
-			.success(function(response) {
+			.then(function someName (response) {
 				console.log(response);
 				$location.url("/items/list");
 			});
